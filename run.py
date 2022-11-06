@@ -10,8 +10,18 @@ from musicbot.utils import guild_to_audiocontroller, guild_to_settings
 
 initial_extensions = ['musicbot.commands.music',
                       'musicbot.commands.general', 'musicbot.plugins.button']
+intents = discord.Intents.default()
+intents.message_content = True
 bot = commands.Bot(command_prefix=config.BOT_PREFIX,
-                   pm_help=True, case_insensitive=True)
+                   pm_help=True, case_insensitive=True, intents=intents)
+
+
+async def load_extensions():
+    for extension in initial_extensions:
+        try:
+            await bot.load_extension(extension)
+        except Exception as e:
+            print(e)
 
 
 if __name__ == '__main__':
@@ -23,15 +33,12 @@ if __name__ == '__main__':
         print("Error: No bot token!")
         exit
 
-    for extension in initial_extensions:
-        try:
-            bot.load_extension(extension)
-        except Exception as e:
-            print(e)
+
 
 
 @bot.event
 async def on_ready():
+    await load_extensions()
     print(config.STARTUP_MESSAGE)
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="Music, type {}help".format(config.BOT_PREFIX)))
 
@@ -81,4 +88,4 @@ async def register(guild):
                         print(e)
 
 
-bot.run(config.BOT_TOKEN, bot=True, reconnect=True)
+bot.run(config.BOT_TOKEN, reconnect=True)

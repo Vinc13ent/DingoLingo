@@ -1,23 +1,22 @@
-BOT_TOKEN: str = ""
-SPOTIFY_ID: str = ""
-SPOTIFY_SECRET: str = ""
+BOT_TOKEN: str = "MTAyOTAyNDYzNzQ1MzA4MjYyNA.GGAHwB.lJEhVoBYfYergcXS3aeyifxXWZD3CTP89sAe_4"
+SPOTIFY_ID: str = "cd45458051dd41939c25a26d58217c68"
+SPOTIFY_SECRET: str = "d5bf8fb6a0ca46efa20353e66b7e1688"
 
-BOT_PREFIX = "$"
+BOT_PREFIX = "."
 
-EMBED_COLOR = 0x4dd4d0  #replace after'0x' with desired hex code ex. '#ff0188' >> '0xff0188'
+EMBED_COLOR = 0x4dd4d0  # replace after'0x' with desired hex code ex. '#ff0188' >> '0xff0188'
 
 SUPPORTED_EXTENSIONS = ('.webm', '.mp4', '.mp3', '.avi', '.wav', '.m4v', '.ogg', '.mov')
 
-MAX_SONG_PRELOAD = 5  #maximum of 25
+MAX_SONG_PRELOAD = 5  # maximum of 25
 
 COOKIE_PATH = "/config/cookies/cookies.txt"
 
 GLOBAL_DISABLE_AUTOJOIN_VC = False
 
-VC_TIMEOUT = 600 #seconds
-VC_TIMOUT_DEFAULT = True  #default template setting for VC timeout true= yes, timeout false= no timeout
-ALLOW_VC_TIMEOUT_EDIT = True  #allow or disallow editing the vc_timeout guild setting
-
+VC_TIMEOUT = 600  # seconds
+VC_TIMOUT_DEFAULT = True  # default template setting for VC timeout true= yes, timeout false= no timeout
+ALLOW_VC_TIMEOUT_EDIT = True  # allow or disallow editing the vc_timeout guild setting
 
 STARTUP_MESSAGE = "Starting Bot..."
 STARTUP_COMPLETE_MESSAGE = "Startup Complete"
@@ -31,7 +30,7 @@ CHANNEL_NOT_FOUND_MESSAGE = "Error: Could not find channel"
 DEFAULT_CHANNEL_JOIN_FAILED = "Error: Could not join the default voice channel"
 INVALID_INVITE_MESSAGE = "Error: Invalid invitation link"
 
-ADD_MESSAGE= "To add this bot to your own Server, click [here]" #brackets will be the link text
+ADD_MESSAGE = "To add this bot to your own Server, click [here]"  # brackets will be the link text
 
 INFO_HISTORY_TITLE = "Songs Played:"
 MAX_HISTORY_LENGTH = 10
@@ -92,4 +91,4 @@ HELP_SHUFFLE_LONG = "Randomly sort the songs in the current queue"
 HELP_CHANGECHANNEL_SHORT = "Change the bot channel"
 HELP_CHANGECHANNEL_LONG = "Change the bot channel to the VC you are in"
 
-ABSOLUTE_PATH = '' #do not modify
+ABSOLUTE_PATH = ''  # do not modify

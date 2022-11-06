@@ -136,7 +136,7 @@ class Music(commands.Cog):
             config.MAX_SONG_PRELOAD = 25
 
         embed = discord.Embed(title=":scroll: Queue [{}]".format(
-            len(playlist.playque)), color=config.EMBED_COLOR, inline=False)
+            len(playlist.playque)), color=config.EMBED_COLOR)
 
         for counter, song in enumerate(list(playlist.playque)[:config.MAX_SONG_PRELOAD], start=1):
             if song.info.title is None:
@@ -313,5 +313,5 @@ class Music(commands.Cog):
             await ctx.send("Error: Volume must be a number 1-100")
 
 
-def setup(bot):
-    bot.add_cog(Music(bot))
+async def setup(bot):
+    await bot.add_cog(Music(bot))
